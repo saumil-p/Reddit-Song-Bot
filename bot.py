@@ -29,7 +29,7 @@ def run_bot(r, comments_replied_to):
 			songid = random.randint(1,config.maxSong)
 
 			songid = str(songid)
-			
+
 			song = requests.get(config.APISong+songid+config.accessToken).json()['response']['song']['full_title']
 
 
@@ -37,7 +37,7 @@ def run_bot(r, comments_replied_to):
 
 			comment_reply += ">" + song
 
-			#comment_reply += "\n\nThis joke came from [ICNDb.com](http://icndb.com)."
+			comment_reply += "\n\nThis song request fulfilled from [api.genius.com](http://api.genius.com/)."
 
 			comment.reply(comment_reply)
 			print "Replied to comment " + comment.id
